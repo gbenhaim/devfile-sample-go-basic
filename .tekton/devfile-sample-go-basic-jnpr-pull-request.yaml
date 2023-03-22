@@ -37,8 +37,10 @@ spec:
         value: $(tasks.clone-repository.results.url)?rev=$(tasks.clone-repository.results.commit)
       - name: image-url
         value: $(params.output-image)
+      - name: build-task-status
+        value: $(tasks.build-container.status)
       taskRef:
-        bundle: quay.io/redhat-appstudio-tekton-catalog/task-summary:0.1@sha256:03361504506b038934d2a2ed397970f183f9a23506b810bccc964f4c486bfe79
+        bundle: quay.io/redhat-appstudio-tekton-catalog/task-summary:0.1@sha256:6d7319a3c666a6ec8989e839175bdef4795c4459b97f62347ea7689379674389
         name: summary
     params:
     - description: Source Repository URL
